@@ -1,0 +1,74 @@
+1. 关于我们页面（设置页面）：
+  - 布局：
+    - 1个固定的 logo图
+    - 一段文字说明，固定从artileID=ff8080819b54efc0019b5e545cb901e1中取
+      - 注意：这个文章一样也是一个富文本，直接参考隐私协议界面即可
+    - 版本号（最底下中间, 这里的版本号，例如 0.1 ， 0.2 这样的，是你写死在代码里面的, 然后进这个页面有个查看新版本的按钮，点一下就去掉一下接口，如果发现接口出来的版本比本地的版本新，就提醒用户需要更新版本了）：
+      - 接口：/getVersionDetail
+      - 参数：
+        - siteID：ff8080819b535a05019b54b1f4240044
+      - 请求方法：GET
+      - 返回示例：{"body":{"data":{"codeURL":null,"modifiedTime":1767587526000,"code":"0.2","modifiedTimeStr":"2026-01-05 12:32:06","description":"这是2026年的描述\r\n","tipsUpgrade":"这是升级提示文字，和描述的功能类似。\r\n自动升级的时候显示这个。\r\n","logoURL":null,"point":0,"publishURL":null,"versionID":"ff8080819b880ff0019b8c6d373a00b7","fileSizeK":null,"isNoLogin":1,"appType":11,"name":"测试版本2026","fileURL":null,"isDefaultUpgrade":1,"status":5}},"header":{"code":0,"msg":"getVersionDetail success"}}
+      - 注意：
+        - code是最新版本的版本号，如果比当前app里面的写死的 新，则进行更新，否则不更新。
+        - fileURL是apk的地址，可直接下载
+      - 调用时机：
+        - 手动点击查看新版本的按钮
+        - 启动App的时候，调这个接口判断1下，一般是静默下载，自动更新。
+    - 版本发布日期: 也是写死在代码里面的
+2. 常见问题页面（设置页面）：
+  - 接口：/getNavigatorSimpleArticleList
+  - 参数：
+    - navigatorID：dc9d1abf72794c60a6688f17bb2f91db
+    - currentPage: 当前页码
+    - pageNumber：页大小
+  - 请求方法：GET
+  - 返回示例：{"body":{"data":{"currentPgeNumber":2,"total":2,"pageNumber":10,"hasNextPage":false,"totalPage":1,"currentPage":1,"rows":[{"createdDateStr":"2026-01-05","articleID":"4e31c330821a41aca82935ab7a43c429","contentText":null,"description":"这是 回答，回答就是 去找老师要1下 二维码。扫描二维码进行下载。这是 回答，回答就是 去找老师要1下 二维码。扫描二维码进行下载。学校门口的广告牌也有的。","functionURL":null,"title":"常见问题1：如何下载app","listImage":null,"faceImage":null,"isLock":0,"sourceURL":null,"companyID":"ff8080819ac6039e019ac81652a700b2","readTimes":0,"subTitle":"常见问题1：如何下载app","videoURL":null,"createdTime":1767594446000,"applicationID":"ff8080819ac6039e019ac8172ff100b6","sourceID":null,"contentEnglish":null,"startDateStr":"2026-01-05 00:00:00","createdTimeStr":"2026-01-05 14:27:26","publisURL":null,"name":"常见问题1：如何下载app","sourceName":null,"shortName":null,"descriptionEnglish":null,"startDate":"2026-01-05"},{"createdDateStr":"2026-01-05","articleID":"1e04c7769bdb431fa13550bb20ff7098","contentText":null,"description":"这个问题和你有意思，学生要喜欢app，首先app得做的美丽。","functionURL":null,"title":"如何让学生喜欢app","listImage":null,"faceImage":null,"isLock":0,"sourceURL":null,"companyID":"ff8080819ac6039e019ac81652a700b2","readTimes":0,"subTitle":"如何让学生喜欢app","videoURL":null,"createdTime":1767594515000,"applicationID":"ff8080819ac6039e019ac8172ff100b6","sourceID":null,"contentEnglish":null,"startDateStr":null,"createdTimeStr":"2026-01-05 14:28:35","publisURL":null,"name":"如何让学生喜欢app","sourceName":null,"shortName":null,"descriptionEnglish":null,"startDate":null}]}},"header":{"code":0,"msg":"getNavigatorSimpleArticleList success"}}
+  - 注意：
+    - 1. 里面的articleID就是跳转文章界面的ID
+    - 2. 要做分页
+3. 个人中心页面中的下面的功能搬到设置页面：
+        <view class="menu-list">
+          <view class="menu-item" @click="goToArticle('register')">
+            <text class="menu-icon">📋</text>
+            <text class="menu-text">注册协议</text>
+            <text class="menu-arrow">></text>
+          </view>
+          <view class="menu-item" @click="goToArticle('privacy')">
+            <text class="menu-icon">🔐</text>
+            <text class="menu-text">隐私协议</text>
+            <text class="menu-arrow">></text>
+          </view>
+          <view class="menu-item">
+            <text class="menu-icon">📞</text>
+            <text class="menu-text">联系客服</text>
+            <text class="menu-arrow">></text>
+          </view>
+          <view class="menu-item">
+            <text class="menu-icon">ℹ️</text>
+            <text class="menu-text">关于我们</text>
+            <text class="menu-arrow">></text>
+          </view>
+        </view>
+4. 意见反馈页面（设置页面）：
+  - 提交：
+    - 接口：/submitOneFeed
+    - 参数：
+      - sessionID：本地保存的sessionID
+      - title：意见标题
+      - attachmentList：就是本地上传的多个文件（只允许上传图片，然后用逗号分割）
+    - 请求方法：GET
+    - 返回示例：{"body":{"feedID":"b5e69eafb8d04050ae777ce655b690e7"},"header":{"code":0,"msg":"submitOneFeed success"}}
+  - 列表：
+    - 接口：/getMyFeedList
+    - 参数：
+      - sessionID：本地保存的sessionID
+      - currentPage: 当前页码
+      - pageNumber：页大小
+    - 返回示例：{"body":{"data":{"currentPgeNumber":2,"total":2,"pageNumber":10,"hasNextPage":false,"totalPage":1,"currentPage":1,"rows":[{"lastFeedBack":null,"lastFeedBackTimeStr":null,"needHelp":null,"question":null,"memberName":"19920009000","title":"我的第1个意见","content":"这是很多文字","submitTime":1767594833123,"submitTimeStr":"2026-01-05 14:33:53","attachmentList":["1","2","3"],"feedID":"b5e69eafb8d04050ae777ce655b690e7","contact":"19920009000","name":"我的第1个意见","memberAvatar":null,"memberShortName":"19920009000","lastFeedBackTime":null,"memberID":"b333922e4e284be5a357ff4866d91914"},{"lastFeedBack":null,"lastFeedBackTimeStr":null,"needHelp":null,"question":null,"memberName":"19920009000","title":"我的第1个意见","content":"这是很多文字","submitTime":1767594816223,"submitTimeStr":"2026-01-05 14:33:36","attachmentList":[],"feedID":"f1b1de6bd46d435f91893f17b5fd3360","contact":"19920009000","name":"我的第1个意见","memberAvatar":null,"memberShortName":"19920009000","lastFeedBackTime":null,"memberID":"b333922e4e284be5a357ff4866d91914"}]}},"header":{"code":0,"msg":"getMyFeedList success"}}
+    - 注意：
+      - lastFeedBack: 这是后台最后1次的回复文字
+      - lastFeedBackTimeStr: 最后1次的回复时间
+      - submitTimeStr: submitTimeStr
+      - attachmentList: 这是用户传入的图片列表URL
+5. 在作品详情页面，如果是有视频，然后我进页面播放视频，他就会一直固定在页面底部，然后我滚动，他还是在那（Bug）

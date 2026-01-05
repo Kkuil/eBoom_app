@@ -1,0 +1,62 @@
+1. 帮我实现教育培训类的uniapp项目，然后要能打包到安卓和IOS端
+2. 前置说明：
+- 接口前缀：https://api.eboom.com.cn/interface-server/api
+- 技术栈：Uniapp+Typesscript+TailwindCSS
+- 接口的json格式都有相同的格式：code表示是否成功。0 表示成功，其他都是错误，需要根据错误 进行处理。Msg是给 开发人员看的，必须 转化为 美好的文字给 用户看，不能直接在页面上显示，。所有错误都是给 开发人员看的。
+3. 先帮我实现下面的页面需求：
+- 文章页面（竖屏）：
+  - 接口：/getArticleSimpleDetail
+  - 参数：articleID
+  - 请求方法：GET
+  - 示例返回：{"body":{"apiArticleDto":{"createdDateStr":"2025-12-27","articleID":"ff8080819b54efc0019b5e5eb7f201e9","contentText":"<p>eBoom注册协议</p><p><br/></p><p>这是 客户自己录入的协议文本。</p><p>可以录入 无限制的文字&nbsp;</p><p>app要能正常显示</p><p><br/></p><p>分页</p><p><br/></p>","description":null,"functionURL":null,"title":"eBoom注册协议","listImage":null,"faceImage":null,"isLock":0,"sourceURL":null,"companyID":"ff8080819ac6039e019ac81652a700b2","readTimes":0,"subTitle":null,"videoURL":null,"createdTime":1766814824000,"applicationID":"ff8080819ac6039e019ac8172ff100b6","sourceID":null,"contentEnglish":null,"startDateStr":null,"createdTimeStr":"2025-12-27 13:53:44","publisURL":null,"name":"eBoom注册协议","sourceName":null,"shortName":"eBoom注册协议","descriptionEnglish":null,"startDate":null}},"header":{"code":0,"msg":"getArticleSimpleDetail success"}}
+  - 其中contentText就是需要展示的文本，要能展示富文本
+- 启动页面（竖屏）：
+  - 前置操作：App每次启动的时候判断，如果本地缓存没有deviceID，则必须调这个接口获取
+  - 接口：/submitDeviceInfo
+    - applicationID（必填）：ff8080819ac6039e019ac8172ff100b6
+    - siteID（必填）：ff8080819b535a05019b54b1f4240044
+    - name（必填）：设备名称，从 设备上获取到的，例如 xxx的iphone
+    - shortName（必填）: 默认=name
+    - category（必填）： 设备类型： 1= pc，2=pad，3=手机 ，4=智能设备
+    - OSname（必填）：操作系统的 名称，版本号等
+    - company（必填）：制造商的名称
+    - model（必填）：品牌型号
+    - phoneNumber（选填）：手机号
+    - udid（选填）：一个字符串，每个设备都会有的 
+    - imei（选填）：手机特有的1个串
+    - mac（必填）： 设备的mac地址
+    - pushDeviceID（选填）： 极光推送的 注册号
+  - 请求方法：GET
+  - 返回值：{"body":{"deviceID":"b9777138b0754747a54515e28555af28"},"header":{"code":0,"msg":"submitDeviceInfo success"}}
+  - 后置操作：拿到deviceID之后就在本地数据库中保存下来，后面的接口很多都要用到这个ID
+- 广告页面（竖屏）：
+  - 操作：先弄1个白的view，展示5秒倒计时结束就关闭
+- 首次安装引导页面（竖屏）：
+  - 在app首次运行（通过判断本地缓存中是否有deviceID）的时候，显示四个不同颜色的view（占满页面），最后1个view有立刻体验按钮，按了这个按钮进入注册登录页面。
+- 注册/登录页面（竖屏）：
+  - 字段/布局：
+    - 手机号（loginName）: 11位手机号
+    - 密码（password）: 8-30字符， 有字母，有数字，有符号
+    - 勾选签署：登录前请仔细阅读《注册协议》（蓝色下划线链接跳转到文章页面,带上articleID=ff8080819b54efc0019b5e5eb7f201e9）和《隐私协议》（蓝色下划线链接跳转到文章页面,带上articleID=ff8080819b54efc0019b5e6080f701ea），按登录按钮代表您同意这些协议
+    - 登录   注册(跳转注册页面)
+    - 勾选签署的时候，调两下签署协议（注册和隐私）接口：
+      - 接口：/signOneBlankAgreement
+      - 请求方法：GET
+      - 参数
+        - agreementDefineID
+          - 注册协议ID：ff8080819b54efc0019b5e6dd89301ed（第一下）
+          - 隐私协议ID：ff8080819b54efc0019b5e6cd61701eb（第二下）
+        - deviceID：就是之前缓存的deviceID
+      - 示例返回：{"body":{"agreementID":"a04e1ac120154caa9147ae24d921a4d6"},"header":{"code":0,"msg":"signOneBlankAgreement success"}}
+      - agreementID就是协议的ID，注册协议和隐私协议返回的agreementID都要保存好，后面注册接口要携带上
+  - 登录接口
+    - 接口：/memberLogin
+    - 参数：
+      - siteID：ff8080819b535a05019b54b1f4240044
+      - deviceID： 前面保存的deviceID
+      - loginName：前面收集的手机号
+      - password：前面收集的密码
+    - 返回示例：{"body":{"majorID":"ff8080819ac6039e019ac81766620118","avatarURL":null,"weixinUnionID":null,"weixinToken":null,"isNeedChangePW":"0","sessionID":"3a54723926fb4ad0a4517dc6a4c0866d","recommandCode":null,"lastChangePWTim":"2025-12-27 14:36:48","recommendCode":null,"PWErrorTimes":"0","phone":"19920003000","rankID":"ff8080819ac6039e019ac817669a0119","loginName":"19920003000","rankName":"第一级","name":"小秘书","majorName":"eBoom英语专业","shortName":"1234","memberID":"ff8080819b4f1439019b4f422e87000a"},"header":{"code":0,"msg":"memberLogin success"}}
+    - 需要本地保存保存sessionID和memberID
+
+

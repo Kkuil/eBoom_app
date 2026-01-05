@@ -1,0 +1,65 @@
+1. 帮我把作品里面相关的模拟文件上传的地方改成下面真实的文件上传接口：
+  - 接口：/uploadOneFileToCOS.json
+  - 参数：
+    - outToken：86F34608DA5BA352A5F8BAB331E21C8A
+    - fileBucketID：ff8080819b21179f019b2545d8ae0179
+    - applicationID：ff8080819ac6039e019ac8172ff100b6
+    - companyID：ff8080819ac6039e019ac81652a700b2
+    - siteID：ff8080819ac6039e019ac81765440111
+    - fileName：文件名（带后缀）
+    - name: 只是文件名
+    - suffix: 文件后缀
+  - 请求头：
+    - Content-Type: multipart/form-data
+  - 请求方法：POST
+  - 返回示例：{"body":{"filesID":"739b64ad40344d929a957c560983d789","filesURL":"https://cos.eboom.com.cn/94bb9b6af929487d9c577c07b596b878.png","url":"https://cos.eboom.com.cn/94bb9b6af929487d9c577c07b596b878.png"},"header":{"code":0,"msg":"uploadOneFileToCOS success"}}
+  - 注意：
+    - 在本地存储里面，用这个 url 作为 文件名，存储这些文件实体
+    - 从其他接口获取到的任何文件，都保存到本地
+    - 当页面要显示文件的时候，都进行判断，本地有的，就直接用本地的，本地没有的，在下载到本地。
+2. 获取会员个人的详情
+  - 接口：/getOneMemberDetail
+  - 参数：
+    - sessionID：本地的seessionID
+    - memberID：本地的memberID
+  - 请求方法：GET
+  - 返回示例：{"body":{"ageCategoryID":null,"ageCategoryName":null,"appleUserID":null,"applicationID":"ff8080819ac6039e019ac8172ff100b6","applicationName":"eBoom英语","articleGetPraiseTimes":0,"avatarBack":null,"avatarKey":null,"avatarLarge":null,"avatarLargeURL":null,"avatarMIddle":null,"avatarMiddle":null,"avatarSmall":null,"avatarURL":null,"bMI":null,"birthChildTimes":0,"birthday":null,"birthdayStr":null,"bizBlock":0,"bloodDIctionaryID":null,"bloodDIctionaryName":null,"bodyCategoryID":null,"bodyCategoryName":null,"boneCategoryID":null,"boneCategoryName":null,"browseTotal":0,"career":null,"careerApplyTime":null,"careerApplyTimeStr":null,"careerStatus":0,"careerVerifyTime":null,"careerVerifyTimeStr":null,"channelID":null,"channelName":null,"chest":null,"cityChain":null,"cityID":null,"cityName":null,"clothingSize":null,"companyAddress":null,"companyDepartment":null,"companyFax":null,"companyID":"ff8080819ac6039e019ac81652a700b2","companyJob":null,"companyName":null,"companyNameA":"台州市咿培教育咨询有限公司","companyTel":null,"companyWebsite":null,"companyZip":null,"conceptionTimes":0,"createType":4,"createdTime":"2026-01-04 16:59:53","createdTimeStr":"2026-01-04 16:59:53","creator":null,"creatorName":null,"creditRankID":null,"creditRankName":null,"cunID":null,"cunName":null,"departmentID":null,"departmentName":null,"description":null,"dingdingID":null,"dingdingName":null,"discussGetPraiseTimes":0,"diseaseCategoriesID":null,"diseaseCategoriesName":null,"distributorCompanyID":null,"distributorCompanyName":null,"districtID":null,"districtName":null,"documentGetPraiseTimes":0,"domainAccount":null,"domainID":null,"educationCategoryID":null,"educationCategoryName":null,"email":null,"emotionDictionaryID":null,"emotionDictionaryName":null,"faceCategoryID":null,"faceCategoryName":null,"feishuID":null,"feishuName":null,"fiveCategoryID":null,"fiveCategoryName":null,"getPraiseTotal":0,"graduationYear":null,"graduationYearStr":"未知","headName":null,"highth":null,"hips":null,"homeAddr":null,"homeZip":null,"huanxinLoginTime":null,"huanxinLoginTimeStr":null,"huanxinRegisterTime":null,"huanxinRegisterTimeStr":null,"idNumber":null,"idStatus":0,"idType":null,"industryCategoryID":null,"industryCategoryName":null,"isLock":0,"isMeFans":0,"isMeFollow":0,"isMeFriend":0,"isMePraise":0,"isPublishMe":null,"isValid":1,"jingdongCode":null,"jingdongID":null,"jingdongName":null,"jobCategoryID":null,"jobCategoryName":null,"jobYear":null,"jobYearCategoryID":null,"jobYearCategoryName":null,"lastLoginTime":"2026-01-04 16:59:55","lastLoginTimeStr":null,"legs":null,"levelNumber":1,"lineCategoryID":null,"lineCategoryName":null,"linkChain":null,"linkMemberAvatar":null,"linkMemberID":null,"linkMemberName":null,"loginName":"19920007000","loginPassword":"032008725569ad00ad6ff46bf48e8686","majorID":null,"majorName":null,"mapAddress":null,"mapX":null,"mapY":null,"marriageCategoryID":null,"marriageCategoryName":null,"marriageType":null,"memberBrowseTotal":0,"memberCollectCompanyTotal":0,"memberFansTotal":0,"memberFollowTotal":0,"memberID":"cc1a38d2b26c4b3c985eba2fef48f716","memberIsAdmin":0,"memberIsAuthor":0,"memberIsForeverVIP":0,"memberIsVIP":0,"modifiedTime":"2026-01-04 16:59:55","modifiedTimeStr":null,"modifier":null,"modifierName":null,"myBuyReadStoryTotal12":0,"myBuyReadStoryTotal13":0,"myBuyReadStoryTotal4":0,"myBuyReadStoryTotal9":0,"myMemberDocument":0,"myMemberTrainTotal":0,"name":"19920007000","nationID":null,"nationName":null,"openID":null,"openRegisterTime":null,"openRegisterTimeStr":null,"orderSeq":0,"parentGroupCategoryID":null,"parentGroupCategoryName":null,"password":null,"peopleID":null,"peopleName":null,"phone":"19920007000","preBirthday":null,"preBirthdayStr":null,"professionalCategoryID":null,"professionalCategoryName":null,"propertyID":null,"propertyName":null,"qiyeweixinID":"","qiyeweixinName":null,"qiyeweixinQrURL":null,"qqCode":null,"qqID":null,"qqName":null,"rankID":null,"rankName":null,"recommandChain":null,"recommandCode":"00003","recommendAvatar":null,"recommendChain":null,"recommendCode":"00003","recommendID":null,"recommendName":null,"residentsType":null,"roleType":null,"schoolID":null,"schoolName":null,"selfGetPraiseTimes":0,"serviceMemberAvatar":null,"serviceMemberID":null,"serviceMemberName":null,"shengID":null,"shengName":null,"shiID":null,"shiName":null,"shopID":null,"shopName":null,"shortDescription":null,"shortName":"19920007000","shoulder":null,"siteID":"ff8080819b535a05019b54b1f4240044","siteName":"安卓app","skinCategoryID":null,"skinCategoryName":null,"starDefineID":null,"starDefineName":null,"storyGetPraiseTimes":0,"storyNumber":0,"storyNumber12":0,"storyNumber4":0,"storyNumber9":0,"taobaoID":null,"taobaoName":null,"titleID":null,"titleName":null,"tokenAddress":null,"tradePassword":null,"waist":null,"weibo":null,"weiboAccessToken":null,"weiboID":null,"weiboToken":null,"weiboTokenExpires":null,"weight":null,"weixin":null,"weixinCode":null,"weixinQrURL":null,"weixinToken":null,"weixinUnionID":null,"xianID":null,"xianName":null,"zhenID":null,"zhenName":null,"zhifubaoID":null,"zhifubaoName":null},"header":{"code":0,"msg":"getOneMemberDetail success"}}
+  - 显示字段：
+    - avatarURL：头像（没有要用默认的占位符）
+    - birthdayStr：生日
+    - email：电子邮箱
+    - idNumber：身份证号
+    - lastLoginTime：最后登录时间
+    - loginName：登录名
+    - shortName：用户名
+    - titleName：性别（中文的，直接展示就行了）
+3. 修改会员的头像
+  - 接口：/updateMyMemberAvatar
+  - 参数：
+    - sessionID：本地的seessionID
+    - avatarURL：走上传接口获取到的url
+  - 请求方法：GET
+  - 返回示例：{"body":{"updateTime":1767520254249},"header":{"code":0,"msg":"updateMyMemberAvatar success"}}
+4. 修改会员的ShortName
+  - 接口：/updateMyMemberShortname
+  - 参数：
+    - sessionID：本地的seessionID
+    - shortName：输入的ShortName
+  - 请求方法：GET
+  - 返回示例：{"body":{"updateTime":1767520254249},"header":{"code":0,"msg":"updateMyMemberShortname success"}}
+5. 修改会员的性别
+  - 接口：/updateMyMemberTitleID
+  - 参数：
+    - sessionID：本地的seessionID
+    - titleID：选择的titleID
+      - 男：1d88af067fff4d6e95575e77f7365029
+      - 女：384aba23a5ac4344b5848250d793cd64
+  - 请求方法：GET
+  - 返回示例：{"body":{"updateTime":1767520254249},"header":{"code":0,"msg":"updateMyMemberTitleID success"}}
+6. 修改会员的生日
+  - 接口：/updateMyMemberBirthday
+  - 参数：
+    - sessionID：本地的seessionID
+    - birthday: 选的时候让他选年月日，但是提交的时候我需要上传对应的日期的00:00:00的时间戳
+  - 请求方法：GET
+  - 返回示例：{"body":{"updateTime":1767520254249},"header":{"code":0,"msg":"updateMyMemberBirthday success"}}

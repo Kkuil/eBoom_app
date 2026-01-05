@@ -1,0 +1,53 @@
+1. 帮我代码中出现一样的常量都放到一个constant文件夹下面，比如：
+  - {"REGISTER":"ff8080819b54efc0019b5e6dd89301ed","PRIVACY":"ff8080819b54efc0019b5e6cd61701eb"}
+  - {"REGISTER_ARTICLE":"ff8080819b54efc0019b5e5eb7f201e9","PRIVACY_ARTICLE":"ff8080819b54efc0019b5e6080f701ea"}
+  - 还有就是统一的API前缀：https://api.eboom.com.cn/interface-server/api
+2. 作品功能：
+  - 入口：首页->我的作品
+  - 列表：
+    - 接口：/getStoryList
+    - 参数：
+      - sessionID：前面登录保存的sessionID
+      - pageNumber: 每页条数
+      - currentPage：当前页数
+    - 返回示例：{"body":{"data":{"currentPgeNumber":3,"total":3,"pageNumber":10,"hasNextPage":false,"totalPage":1,"currentPage":1,"rows":[{"isGoodsMember":0,"categoryIDChain":null,"playTimes":0,"companyName":null,"seoWord":null,"approvedUserName":null,"categoryNameSet":null,"closedTime":null,"degreeCategoryID":null,"tableName":null,"doneTimeStr":null,"attributeValueSet":null,"isFree":null,"approvedTimeStr":null,"goldenPrice":0.0,"outSystemCode":null,"approvedUserID":null,"toldUnionID":null,"buyEffectType":0,"totalSeconds":0,"trainMinutes":0,"isMePraise":0,"beginTime":null,"videoFileCode":null,"minCashPrice":0.0,"firstSectionVideo":null,"openCategoryName":null,"cityID":null,"isGlobalMust":0,"buyEffectDays":0,"myPlayingSection":0,"sourceType":null,"isTop":0,"downNumber":0,"isMeUp":0,"freeSeconds":0,"pointPrice":0.0,"shortName":null,"soundURL":"音频文件的url","status":2,"toldTimeStr":"2026-01-02 19:57:45","objectDefineID":null,"memberName":"19920006000","discussTotal":0,"employeeID":null,"chapterNumber":0,"upSectionNumber":0,"openType":0,"textTag":null,"readTimes":0,"videoURL":"视频的url","firstSectionVideoCode":null,"doneTime":null,"functionType":1,"byShopID":null,"degreeCategoryName":null,"isGoodsMaterials":0,"storyID":"4876e66edbcd4067953bf161806e6cdc","myPlayDoneSection":0,"isJobMust":0,"collectTotal":0,"playMembers":0,"isRichTextChanged":0,"toldTime":1767355065000,"openCategoryID":null,"storyCategoryArray":null,"publisURL":"","goldenVIPPrice":0.0,"buyEffectEndDate":null,"buyType":0,"endTime":null,"approvedDescription":null,"memberID":"81ef3654761442979d5f7f9fc4630646","modifiedTime":1767355065000,"isGoods":0,"sectionNumber":0,"listImage":"图片的url","praiseTotal":0,"approvedEmployeeID":null,"approvedMemberAvatar":null,"companyID":"ff8080819ac6039e019ac81652a700b2","soundMemberName":null,"approvedTime":null,"siteID":"ff8080819b535a05019b54b1f4240044","approvedEmployeeName":null,"cashPrice":0.0,"isDeleteRecommend":null,"byShopName":null,"orderSeq":1,"employeeName":null,"approvedMemberName":null,"isGood":0,"upNumber":0,"modifiedTimeStr":"2026-01-02 19:57:45","outIP":null,"goodDiscussRate":0,"playDoneMembers":0,"shortDescription":null,"toldLocationAddress":null,"soundMemberID":null,"name":"我的文字作品","beginTimeStr":null,"closedTimeStr":null,"forwardTotal":0,"isLimit":0,"isTimerChange":0,"outIPAddress":null,"shopID":null,"isDeleteCategory":null,"description":null,"shopName":null,"categoryName":null,"approvedStatus":0,"content":null,"faceImage":null,"isMeBuy":0,"cityName":null,"downloadTimes":0,"memberAvatar":null,"categoryID":null,"readBuyType":0,"approvedMemberID":null,"buyEffectEndDateStr":null,"minPointPrice":0,"toldLocationMapY":null,"cashVIPPrice":0.0,"toldLocationMapX":null,"beanPrice":0.0,"categoryIDSet":null,"browseTimes":0,"freeContent":null,"showPrice":0.0,"updateStatus":0,"endTimeStr":null,"rebatePrice":0.0,"isMeDown":0,"objectName":null,"imageTag":null,"objectID":null},{"isGoodsMember":0,"categoryIDChain":null,"playTimes":0,"companyName":null,"seoWord":null,"approvedUserName":null,"categoryNameSet":null,"closedTime":null,"degreeCategoryID":null,"tableName":null,"doneTimeStr":null,"attributeValueSet":null,"isFree":null,"approvedTimeStr":null,"goldenPrice":0.0,"outSystemCode":null,"approvedUserID":null,"toldUnionID":null,"buyEffectType":0,"totalSeconds":0,"trainMinutes":0,"isMePraise":0,"beginTime":null,"videoFileCode":null,"minCashPrice":0.0,"firstSectionVideo":null,"openCategoryName":null,"cityID":null,"isGlobalMust":0,"buyEffectDays":0,"myPlayingSection":0,"sourceType":null,"isTop":0,"downNumber":0,"isMeUp":0,"freeSeconds":0,"pointPrice":0.0,"shortName":null,"soundURL":"音频文件的url","status":2,"toldTimeStr":"2026-01-02 20:04:09","objectDefineID":null,"memberName":"19920006000","discussTotal":0,"employeeID":null,"chapterNumber":0,"upSectionNumber":0,"openType":0,"textTag":null,"readTimes":0,"videoURL":"视频的url","firstSectionVideoCode":null,"doneTime":null,"functionType":1,"byShopID":null,"degreeCategoryName":null,"isGoodsMaterials":0,"storyID":"9ffeb87db3d94847af89ef9062dddb15","myPlayDoneSection":0,"isJobMust":0,"collectTotal":0,"playMembers":0,"isRichTextChanged":0,"toldTime":1767355449000,"openCategoryID":null,"storyCategoryArray":null,"publisURL":"","goldenVIPPrice":0.0,"buyEffectEndDate":null,"buyType":0,"endTime":null,"approvedDescription":null,"memberID":"81ef3654761442979d5f7f9fc4630646","modifiedTime":1767355449000,"isGoods":0,"sectionNumber":0,"listImage":"图片的url","praiseTotal":0,"approvedEmployeeID":null,"approvedMemberAvatar":null,"companyID":"ff8080819ac6039e019ac81652a700b2","soundMemberName":null,"approvedTime":null,"siteID":"ff8080819b535a05019b54b1f4240044","approvedEmployeeName":null,"cashPrice":0.0,"isDeleteRecommend":null,"byShopName":null,"orderSeq":1,"employeeName":null,"approvedMemberName":null,"isGood":0,"upNumber":0,"modifiedTimeStr":"2026-01-02 20:04:09","outIP":null,"goodDiscussRate":0,"playDoneMembers":0,"shortDescription":null,"toldLocationAddress":null,"soundMemberID":null,"name":"我的2026-01-02文字作品","beginTimeStr":null,"closedTimeStr":null,"forwardTotal":0,"isLimit":0,"isTimerChange":0,"outIPAddress":null,"shopID":null,"isDeleteCategory":null,"description":null,"shopName":null,"categoryName":null,"approvedStatus":0,"content":null,"faceImage":null,"isMeBuy":0,"cityName":null,"downloadTimes":0,"memberAvatar":null,"categoryID":null,"readBuyType":0,"approvedMemberID":null,"buyEffectEndDateStr":null,"minPointPrice":0,"toldLocationMapY":null,"cashVIPPrice":0.0,"toldLocationMapX":null,"beanPrice":0.0,"categoryIDSet":null,"browseTimes":0,"freeContent":null,"showPrice":0.0,"updateStatus":0,"endTimeStr":null,"rebatePrice":0.0,"isMeDown":0,"objectName":null,"imageTag":null,"objectID":null},{"isGoodsMember":0,"categoryIDChain":null,"playTimes":0,"companyName":null,"seoWord":null,"approvedUserName":null,"categoryNameSet":null,"closedTime":null,"degreeCategoryID":null,"tableName":null,"doneTimeStr":null,"attributeValueSet":null,"isFree":null,"approvedTimeStr":null,"goldenPrice":0.0,"outSystemCode":null,"approvedUserID":null,"toldUnionID":null,"buyEffectType":0,"totalSeconds":0,"trainMinutes":0,"isMePraise":0,"beginTime":null,"videoFileCode":null,"minCashPrice":0.0,"firstSectionVideo":null,"openCategoryName":null,"cityID":null,"isGlobalMust":0,"buyEffectDays":0,"myPlayingSection":0,"sourceType":null,"isTop":0,"downNumber":0,"isMeUp":0,"freeSeconds":0,"pointPrice":0.0,"shortName":null,"soundURL":"音频文件的url","status":2,"toldTimeStr":"2026-01-02 20:03:48","objectDefineID":null,"memberName":"19920006000","discussTotal":0,"employeeID":null,"chapterNumber":0,"upSectionNumber":0,"openType":0,"textTag":null,"readTimes":0,"videoURL":"视频的url","firstSectionVideoCode":null,"doneTime":null,"functionType":1,"byShopID":null,"degreeCategoryName":null,"isGoodsMaterials":0,"storyID":"fe46df7cf93d492fa891608a3c1eff94","myPlayDoneSection":0,"isJobMust":0,"collectTotal":0,"playMembers":0,"isRichTextChanged":0,"toldTime":1767355428000,"openCategoryID":null,"storyCategoryArray":null,"publisURL":"","goldenVIPPrice":0.0,"buyEffectEndDate":null,"buyType":0,"endTime":null,"approvedDescription":null,"memberID":"81ef3654761442979d5f7f9fc4630646","modifiedTime":1767355428000,"isGoods":0,"sectionNumber":0,"listImage":"图片的url","praiseTotal":0,"approvedEmployeeID":null,"approvedMemberAvatar":null,"companyID":"ff8080819ac6039e019ac81652a700b2","soundMemberName":null,"approvedTime":null,"siteID":"ff8080819b535a05019b54b1f4240044","approvedEmployeeName":null,"cashPrice":0.0,"isDeleteRecommend":null,"byShopName":null,"orderSeq":1,"employeeName":null,"approvedMemberName":null,"isGood":0,"upNumber":0,"modifiedTimeStr":"2026-01-02 20:03:48","outIP":null,"goodDiscussRate":0,"playDoneMembers":0,"shortDescription":null,"toldLocationAddress":null,"soundMemberID":null,"name":"我的2026文字作品","beginTimeStr":null,"closedTimeStr":null,"forwardTotal":0,"isLimit":0,"isTimerChange":0,"outIPAddress":null,"shopID":null,"isDeleteCategory":null,"description":null,"shopName":null,"categoryName":null,"approvedStatus":0,"content":null,"faceImage":null,"isMeBuy":0,"cityName":null,"downloadTimes":0,"memberAvatar":null,"categoryID":null,"readBuyType":0,"approvedMemberID":null,"buyEffectEndDateStr":null,"minPointPrice":0,"toldLocationMapY":null,"cashVIPPrice":0.0,"toldLocationMapX":null,"beanPrice":0.0,"categoryIDSet":null,"browseTimes":0,"freeContent":null,"showPrice":0.0,"updateStatus":0,"endTimeStr":null,"rebatePrice":0.0,"isMeDown":0,"objectName":null,"imageTag":null,"objectID":null}]}},"header":{"code":0,"msg":"getStoryList success"}}
+    - 列表展示：作品的标题，作品的图片（如果有的话），创建日期，编辑按钮，删除按钮
+  - 新增：
+    - 接口：/submitOneStory
+    - 参数：
+      - sessionID：前面登录保存的sessionID
+      - name：标题（限制50字）
+      - content: 内容（限制500字）
+      - studentID：当前登录学生的ID
+      - functionType：1
+      - orderSeq：1
+      - listImage：图片的URL（文件上传接口还没写好，先用写死的URL，而且只能一个）
+      - videoURL：视频URL（文件上传接口还没写好，先用写死的URL，而且只能一个）
+      - soundURL：音频URL（文件上传接口还没写好，先用写死的URL，而且只能一个）
+      - 注意：其中listImage和videoURL只能选一个（强控制，并且写在创建作品的页面上的小字）
+    - 返回示例：{"body":{"storyID":"2aeaadbda0f84a99bf1895995db50fd4"},"header":{"code":0,"msg":"submitOneStory success"}}
+    - 后置操作：创建完成后，跳转到列表页面
+  - 修改：
+    - 接口：/updateOneStory
+    - 参数：
+      - sessionID：前面登录保存的sessionID
+      - storyID：作品的ID
+      - name：标题（限制50字）
+      - content: 内容（限制500字）
+      - studentID：当前登录学生的ID
+      - functionType：1
+      - orderSeq：1
+      - listImage：图片的URL（文件上传接口还没写好，先用写死的URL，而且只能一个）
+      - videoURL：视频URL（文件上传接口还没写好，先用写死的URL，而且只能一个）
+      - soundURL：音频URL（文件上传接口还没写好，先用写死的URL，而且只能一个）
+      - 注意：其中listImage和videoURL只能选一个（强控制，并且写在创建作品的页面上的小字）
+      - 注意：在页面上修改了，就传对应的参数，页面未修改的，则不用传。例如，这次只修改了 文字内容，则只传 content参数
+    - 返回示例：{"body":{"updateTime":"2026-01-02 19:58:39"},"header":{"code":0,"msg":"updateOneStory success"}}
+    - 后置操作：修改成功需要返回列表页面，并刷新列表页面
+  - 删除：
+    - 接口：/deleteOneStory
+    - 参数：
+      - sessionID：前面登录保存的sessionID
+      - storyID：作品ID
+    - 返回示例：{"body":{"deleteTime":"2026-01-02 20:01:04"},"header":{"code":0,"msg":"deleteOneStory success"}}
+    - 后置操作：删除成功后，刷新列表页面

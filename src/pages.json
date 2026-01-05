@@ -1,0 +1,163 @@
+{
+  "pages": [
+    {
+      "path": "pages/splash/index",
+      "style": {
+        "navigationBarTitleText": "",
+        "navigationStyle": "custom",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/ad/index",
+      "style": {
+        "navigationBarTitleText": "",
+        "navigationStyle": "custom",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/guide/index",
+      "style": {
+        "navigationBarTitleText": "",
+        "navigationStyle": "custom",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/login/index",
+      "style": {
+        "navigationBarTitleText": "登录",
+        "navigationStyle": "custom",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/register/index",
+      "style": {
+        "navigationBarTitleText": "注册",
+        "navigationStyle": "custom",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/article/index",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/home/index",
+      "style": {
+        "navigationBarTitleText": "首页",
+        "navigationBarBackgroundColor": "#007AFF",
+        "navigationBarTextStyle": "white",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/profile/index",
+      "style": {
+        "navigationBarTitleText": "个人中心",
+        "navigationStyle": "custom",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/story/list",
+      "style": {
+        "navigationBarTitleText": "我的作品",
+        "navigationStyle": "custom",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/story/detail",
+      "style": {
+        "navigationBarTitleText": "作品详情",
+        "navigationStyle": "custom",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/story/edit",
+      "style": {
+        "navigationBarTitleText": "编辑作品",
+        "navigationStyle": "custom",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/settings/index",
+      "style": {
+        "navigationBarTitleText": "设置",
+        "navigationStyle": "custom",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/settings/about",
+      "style": {
+        "navigationBarTitleText": "关于我们",
+        "navigationStyle": "custom",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/settings/faq",
+      "style": {
+        "navigationBarTitleText": "常见问题",
+        "navigationStyle": "custom",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    },
+    {
+      "path": "pages/settings/feedback",
+      "style": {
+        "navigationBarTitleText": "意见反馈",
+        "navigationStyle": "custom",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "eBoom",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8",
+    "pageOrientation": "landscape"
+  }
+}
